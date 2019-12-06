@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include common %>
+        <title>学生个人中心</title>
+
+</head>
+
+<body>
+    <%- include("head",{title:"login"}) %>
+        <div class="container container-fluid ">
+            <%- include("stu_nav",{type:'pwd'}) %>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 id="main" class="text-danger caption" data-mobile="<%- mobile%>"> 重置密码:
+                            <%- mobile %>
+                        </h2>
+                        <div class=" form-group ">
+                            <label for="oldpwd ">原始密码:</label>
+                            <input name="oldpwd " value="<%- password%>" type="text" class="form-control" id="oldpwd" placeholder="请输入你原始密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="newpwd">新密码:</label>
+                            <input name="newpwd" type="password" class="form-control" id="newpwd" placeholder="请输入你的新密码">
+                        </div>
+                        <button type="button" class="btn btn-info btn-block" onclick="changepwd()">马上修改</button>
+                    </div>
+                </div>
+        </div>
+
+</body>
+<script>
+    function changepwd() {
+        var oldpwd = $("#oldpwd").val();
+        var newpwd = $("#newpwd").val();
+        var mobile = $("#main").attr("data-mobile");
+        $.ajax({
+            url: "/student/changepwd",
+            method: "POST",
+            data: {
+                oldpwd,
+                newpwd,
+                mobile,
+            },
+            success(res) {
+                console.log(res);
+                alert("密码修改成功");
+                $("#oldpwd").val(res.newpwd);
+                $("#newpwd").val("")
+            }
+        });
+    }
+</script>
+
+</html>

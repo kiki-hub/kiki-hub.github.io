@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include common %>
+        <title>教师登录页面</title>
+</head>
+
+<body>
+    <%- include("head",{title:"login"}) %>
+        <div class="container container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-3 form_borders">
+                    <form action="/users/tlogin" method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">账号:</label>
+                            <input value="<%- mobile%>" type="tel" class="form-control" id="mobile" name="mobile" placeholder="请输入账号">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">登录密码:</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
+                        </div>
+                        <p class="text-warning hrefp" onclick="location.href='tregister'">点击注册</p>
+                        <button type="submit" class="btn btn-info btn-block">登录</button>
+                        <button type="reset" class="btn btn-primary btn-block">重置</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>

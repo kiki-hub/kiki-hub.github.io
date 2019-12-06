@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include common %>
+        <title>教师个人中心</title>
+</head>
+
+<body>
+    <%- include("head",{title:"login"}) %>
+        <div class="container container-fluid ">
+            <%- include("tea_nav",{type:"banji"}) %>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div>
+                            <h2 class="text-primary caption">你当前所带的班级:</h2>
+                            <%  if(obj){  %>
+                                <%  console.log(obj);   obj.forEach(item=>{  %>
+                                    <p>
+                                        <%- item.text %>
+                                            / <span>XX-删除</span>
+                                    </p>
+                                    <%    })   %>
+                                        <%    }else{   %>
+                                            <h2 class="text-danger">你暂时还没有添加所带班级</h2>
+                                            <%    }     %>
+
+                        </div>
+                        <hr>
+                        <div>
+                            <h2 class="text-success caption">添加我的班级</h2>
+                            <div class="form-group">
+                                <label for="banji"></label>
+                                <select id="banji" class="form-control">
+                            <option value="">请添加班级</option>
+                        <%    banjilist.forEach((item,index)=>{  %>
+                                <option value="<%- item.bancode %>" > <%- item.banji %></option>
+                        <%    })    %>
+                        </select>
+                                <button class="btn btn-block btn-danger" onclick="addBanji()">添加班级</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+</body>
+<script>
+    function addBanji() {
+        var bancode = $("#banji").val();
+        console.log(bancode);
+        $.ajax({
+            url: "/teacher/addBanji",
+            method: "POST",
+            data: {
+                bancode,
+            },
+            success: function(res) {
+                console.log(res);
+                window.location.reload();
+            }
+        });
+    }
+</script>
+
+</html>

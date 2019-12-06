@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include common%>
+        <title>千锋教育后台管理系统</title>
+</head>
+
+<body>
+    <%- include("head",{title:"home"}) %>
+        <div class="container container-fluid">
+            <h2>首页--
+                <%- title%>
+            </h2>
+            <div class="col-md-3">
+                <%   if(username&&mobile){  %>
+                    <h4 class="text-primary">欢迎你:
+                        <%- username%> /
+                            <%- mobile %>
+                    </h4>
+                    <%    }else{ %>
+                        <button type="button" class="btn btn-primary" onclick="location.href='/login'">学生登录</button>
+                        <button type=" button " class="btn btn-info " onclick="location.href='/tlogin'">教师登录</button>
+                        <%     }    %>
+
+            </div>
+        </div>
+
+</body>
+
+</html>
