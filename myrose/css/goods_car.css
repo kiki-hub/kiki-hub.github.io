@@ -1,0 +1,145 @@
+.index {
+    width: 1198px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.bg_content {
+    background: #f0f0f0;
+    padding-bottom: 100px;
+}
+
+.bg_content .content {
+    width: 1198px;
+    margin: 0 auto;
+}
+
+.bg_content .content table {
+    width: 100%;
+}
+
+.bg_content .content .Theader {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.bg_content .content .Theader tbody {
+    width: 100%;
+    height: 145px;
+}
+
+.bg_content .content .Theader tbody th {
+    border-spacing: 5px;
+    height: 50px;
+    line-height: 50px;
+    background: #000;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.bg_content .content .Tcon {
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+}
+
+.bg_content .content .Tcon tbody {
+    margin-bottom: 10px;
+}
+
+.bg_content .content .Tcon th {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.bg_content .content .Tcon .goods_name {
+    height: 145px;
+}
+
+.bg_content .content .Tcon .goods_name img {
+    display: block;
+    width: 145px;
+    height: 145px;
+    float: left;
+}
+
+.bg_content .content .Tcon .goods_name span {
+    float: left;
+    line-height: 145px;
+}
+
+.bg_content .content .Tcon .goods_count .goods_num {
+    width: 40px;
+    height: 19px;
+    border: 1px solid #000;
+    float: left;
+    text-align: center;
+    color: #000;
+}
+
+.bg_content .content .Tcon .goods_count .pointer {
+    color: #fff;
+    font-size: 16px;
+    background: #000;
+    width: 19px;
+    height: 21px;
+    float: left;
+}
+
+.bg_content .content .Tfooter {
+    height: 50px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.bg_content .content .Tfooter th {
+    padding-right: 30px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    background: #fff;
+    line-height: 50px;
+}
+
+.bg_content .content .Tfooter th:first-child {
+    text-align: left;
+    text-indent: 24px;
+}
+
+.bg_content .content .Tfooter th:first-child .clear_btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bg_content .content .Tfooter .price_th {
+    width: 870px;
+    text-align: right;
+}
+
+.bg_content .content .Tfooter .price_th em {
+    font-size: 20px;
+    color: #000;
+    font-style: normal;
+}
+
+.bg_content .content .Tfooter .sub_th {
+    padding-right: 0px;
+    text-align: center;
+}
+
+.bg_content .content .Tfooter .sub_th .login_ok {
+    display: block;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    background: #000;
+    color: #fff;
+}
+
+
+/*# sourceMappingURL=goods_car.css.map */

@@ -1,0 +1,62 @@
+.bg_content {
+    background: #f0f0f0;
+    .content {
+        width: 1198px;
+        margin: 0 auto;
+        // background: chartreuse;
+        font-size: 14px;
+        .index {
+            height: 50px;
+            line-height: 50px;
+            width: 100%;
+        }
+        .ringList {
+            width: 1198px;
+            overflow: hidden;
+            li {
+                float: left;
+                width: 292px;
+                height: 370px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                background: #fff;
+                position: relative;
+                a:hover {
+                    img {
+                        top: -2px;
+                    }
+                    h3 {
+                        color: #333333;
+                    }
+                }
+                img {
+                    position: absolute;
+                    left: 0px;
+                    top: 0;
+                    width: 292px;
+                    height: 292px;
+                    transition: top .2s ease-in-out;
+                }
+                .price {
+                    position: absolute;
+                    left: 0;
+                    bottom: 50px;
+                    h3 {
+                        width: 292px;
+                        font-size: 14px;
+                        text-align: center;
+                        font-weight: 400;
+                    }
+                }
+            }
+            li:nth-child(4n) {
+                margin-right: 0px;
+            }
+        }
+        .box {
+            width: 500px;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+}

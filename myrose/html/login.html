@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- <script src="../js/cookie.js"></script> -->
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../font_footer2/iconfont.css">
+    <link rel="stylesheet " href="../font_footer2/iconfont.css ">
+</head>
+
+<body>
+    <!-------------- header------------------->
+    <div class="wrap_header"></div>
+
+    <!-------------- content ------------------->
+    <div class="bg_content">
+        <div class="content">
+            <div class="content_lef">
+                <h3>真爱承诺证书</h3>
+                <h5>LOVE CUSTOM</h5>
+                <p>FORMYROSE（弗蒂斯），秉承：一生只为一人定制的创始理念。</p>
+                <p>阁下购买时需填写真爱承诺证书，爱人姓名填写后将存入FORMYROSE真爱档案并锁定，</p>
+                <p>一生不得更改。</p>
+                <img src="../images/login_c1.jpg" alt="">
+            </div>
+            <div class="content_rig">
+                <p class="p1">
+                    <a href="#" class="alog">登录</a>
+                    <a href="regist.html" class="areg">立即注册</a>
+                </p>
+                <div class="phone">
+                    <img src="../images/log_03.jpg" alt="">
+                    <input type="text" class="phonenum" placeholder="请输入您的手机号码">
+                </div>
+                <div class="psd">
+                    <img src="../images/log_06.jpg" alt="">
+                    <input type="password" class="psdInp" placeholder="请输入您的密码">
+                </div>
+                <p class="p2">
+                    <input type="checkbox">
+                    <span>忘记我</span>
+                    <a href="#">忘记密码？</a>
+                </p>
+                <button class="loginBtn">立即登录</button>
+            </div>
+        </div>
+    </div>
+
+    <!-------------- footer------------------->
+    <div class="wrap_footer"></div>
+
+
+</body>
+<script>
+    var phoneInp = document.querySelector(".phonenum");
+    var psdInp = document.querySelector(".psdInp");
+    var loginBtn = document.querySelector(".loginBtn");
+    //让用户登录显示
+    $.getScript("../js/cookie.js", function() {
+        console.log("外部js引入完毕");
+        var userphone = getCookie("userphone");
+        if (userphone) {
+            // $(".loginuser").text(userphone);
+            console.log(userphone);
+            $(".loginuser").text(userphone);
+        }
+    });
+
+    loginBtn.onclick = function() {
+        var userphone = phoneInp.value;
+        var password = psdInp.value;
+        console.log(userphone, password);
+
+        if (userphone && password) {
+            $.ajax({
+                type: "POST",
+                url: "../php/login.php",
+                data: {
+                    userphone,
+                    password
+                },
+                dataType: "json",
+                success: function(res) {
+                    console.log(res);
+                    if (res.length > 0) {
+                        alert("登录成功");
+                        setCookie("userphone", userphone, 7);
+                        setCookie("password", password, 7);
+                        // 头部登录显示
+                        // 外部引入cookie.js
+                        $.getScript("../js/cookie.js", function() {
+                            console.log("外部js引入完毕");
+                            var userphone = getCookie("userphone");
+                            if (userphone) {
+                                // $(".loginuser").text(userphone);
+                                console.log(userphone);
+                                $(".loginuser").text(userphone);
+                                location.href = "index.html";
+                            }
+                        });
+
+                    } else {
+                        if (confirm("该用户不存在,是否需要注册")) {
+                            location.href = "regist.html";
+                        }
+                        // alert("该用户不存在");
+                    }
+                }
+            });
+        } else {
+            alert("请输入号码和密码");
+        }
+    }
+
+    // cookie 的创建(键值对  name=value)
+    function setCookie(name, value, day, path = "/") {
+        var date = new Date();
+        date.setDate(date.getDate() + day);
+        document.cookie = name + "=" + value + ";expires=" + date.toGMTString() + ";path=" + path;
+    }
+</script>
+
+</html>

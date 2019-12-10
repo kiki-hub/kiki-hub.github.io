@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/**************index*************/
+
+.index {
+    width: 1198px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.index>a {
+    color: inherit;
+}
+
+
+/**************banner*************/
+
+.FDS_banner {
+    width: 1198px;
+    height: 520px;
+    /* background: darkred; */
+    margin: 0 auto;
+}
+
+.FDS_banner img {
+    width: 100%;
+    height: 520px;
+}
+
+
+/**************bc*************/
+
+.FDS_bc {
+    height: 254px;
+    background: #f5f5f5;
+}
+
+.FDS_bc .bc {
+    width: 1200px;
+    height: 254px;
+    margin: 0 auto;
+    /*background: yellowgreen;*/
+    overflow: hidden;
+}
+
+.FDS_bc .bc .bc_div {
+    height: 122px;
+    text-align: center;
+    margin-top: 75px;
+}
+
+.FDS_bc .bc .bc_div h2 {
+    font-size: 26px;
+    color: #000200;
+    font-weight: normal;
+}
+
+.FDS_bc .bc .bc_div p {
+    font-size: 12px;
+    color: #030005;
+    line-height: 26px;
+}
+
+.FDS_bc .bc .bc_div .p1 {
+    font-size: 10px;
+    color: #b6afb6;
+}
+
+
+/**************lc*************/
+
+.FDS_lc {
+    height: 794px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.FDS_lc .lc {
+    width: 1198px;
+    height: 680px;
+    margin: 0 auto;
+    /*background: darkslateblue;*/
+    margin-top: 56px;
+    border: 1px solid #cfcfcf;
+}
+
+.FDS_lc .lc .lc_lf {
+    width: 593px;
+    height: 680px;
+    text-align: center;
+    overflow: hidden;
+    float: left;
+    /*background: yellowgreen;*/
+}
+
+.FDS_lc .lc .lc_lf h2 {
+    font-size: 30px;
+    color: #100008;
+    margin-top: 110px;
+    font-weight: normal;
+}
+
+.FDS_lc .lc .lc_lf img {
+    width: 315px;
+    height: 188px;
+    margin-top: 36px;
+}
+
+.FDS_lc .lc .lc_lf p {
+    font-size: 12px;
+    color: #000100;
+    line-height: 25px;
+}
+
+.FDS_lc .lc .lc_lf .p1 {
+    font-size: 10px;
+    color: #b6c0e3;
+    margin-top: 4px;
+}
+
+.FDS_lc .lc .lc_lf .p2 {
+    margin-top: 60px;
+}
+
+.FDS_lc .lc .lc_rig {
+    width: 605px;
+    height: 682px;
+    /*background: burlywood;*/
+    float: left;
+    overflow: hidden;
+}
+
+.FDS_lc .lc .lc_rig img {
+    width: 388px;
+    height: 514px;
+    margin-top: 75px;
+    margin-left: 104px;
+}
+
+
+/**************msg*************/
+
+.FDS_msg {
+    height: 1343px;
+    background: #e5e5e5;
+    overflow: hidden;
+}
+
+.FDS_msg .msg {
+    width: 1200px;
+    height: 1179px;
+    margin: 0 auto;
+    background: #ffffff;
+    margin-top: 68px;
+}
+
+.FDS_msg .msg>div {
+    width: 1200px;
+    height: 393px;
+}
+
+.FDS_msg .msg>div>div {
+    width: 600px;
+    height: 393px;
+    float: left;
+    /*background: yellow;*/
+}
+
+.FDS_msg .msg>div>div>div {
+    width: 434px;
+    margin-left: 80px;
+    margin-top: 67px;
+    /*overflow: hidden;*/
+}
+
+.FDS_msg .msg>div>div>div h2 {
+    font-size: 28px;
+    color: #010005;
+    font-weight: normal;
+}
+
+.FDS_msg .msg>div>div>div p {
+    font-size: 10px;
+    color: #000504;
+    line-height: 26px;
+    white-space: normal;
+}
+
+.FDS_msg .msg>div>div>div .p1 {
+    font-size: 10px;
+    color: #bababc;
+}
+
+.FDS_msg .msg>div img {
+    width: 600px;
+    height: 393px;
+    float: left;
+    background: yellowgreen;
+}

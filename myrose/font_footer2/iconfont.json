@@ -1,0 +1,30 @@
+{
+  "id": "1444512",
+  "name": "footer2",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "124857",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "579860",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "782361",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    }
+  ]
+}

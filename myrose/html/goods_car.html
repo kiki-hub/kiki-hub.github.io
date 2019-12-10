@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet " href="../font_footer2/iconfont.css ">
+    <link rel="stylesheet" href="../css/goods_car.css">
+</head>
+
+<body>
+    <!---------------- header ------------------>
+    <div class="wrap_header"></div>
+    <!---------------- content ------------------>
+    <div class="bg_content">
+        <div class="index">
+            当前位置: <a href="index.html">首页</a> <code>&gt;</code> 购物流程
+        </div>
+        <div class="content">
+            <!-- 购物车第一行 -->
+            <table cellspacing="0" cellpadding="0" class="Theader">
+                <tbody>
+                    <tr>
+                        <th width="160">编辑</th>
+                        <th width="310">商品名称</th>
+                        <th width="240">属性</th>
+                        <th width="90">购买数量</th>
+                        <th width="180">单价</th>
+                        <th>小计</th>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 购物车第二行 -->
+            <table cellspacing="0" cellpadding="0" class="Tcon">
+                <!--<tbody>
+                     <tr>
+                        <th width="160"><img src="../images/gcar_no_03.jpg" alt=""></th>
+                        <th width="310" height="145" class="goods_name">
+                            <img src="../images/goods_img.png" alt="">
+                            <a href="#"><span class="goods_name">守护一生k金项链</span></a>
+                        </th>
+                        <th width="240" class="goods_prop">尺寸：均码</th>
+                        <th width="90" class="goods_count">
+                            <a href="#" class="sub pointer">-</a>
+                            <input type="text" class="goods_num" value="1">
+                            <a href="#" class="add pointer">+</a>
+                        </th>
+                        <th width="180" class="goods_price">1999.00</th>
+                        <th class="allprice">小计</th>
+                    </tr> 
+                </tbody>-->
+            </table>
+
+
+            <!-- 购物车第三行 -->
+            <table border="0" cellspacing="0" cellpadding="0" class="Tfooter">
+                <!-- <tbody>
+                    <tr>
+                        <th width="120"><input type="button" class="clear_btn" value="清空购物车" onclick=""></th>
+                        <th class="price_th"><span>商品应付金额：</span><em>￥</em><em id="amount2">1999.00</em></th>
+                        <th width="180" class="sub_th">
+                            <a href="#" id="submit" class="login_ok">提交订单</a>
+                        </th>
+                    </tr>
+                </tbody> -->
+            </table>
+
+
+        </div>
+    </div>
+    <!---------------- footer ------------------>
+    <div class="wrap_footer"></div>
+
+</body>
+<script>
+    // 首先自动生成页面
+    addhtml();
+
+    //删除事件函数
+    function del(ele) {
+        var id_num = $(ele).parent().parent().attr("id");
+        console.log(id_num);
+        $.ajax({
+            type: "get",
+            url: "../php/deleteById_num.php",
+            data: {
+                id_num: id_num
+            },
+            dataType: "json",
+            success: function(res) {
+                console.log(res);
+                var status = res.status;
+                if (status) {
+                    console.log("删除成功!");
+                    addhtml();
+                    // location.href = "goods_car.html";
+                } else {
+                    console.log("删除失败!");
+                }
+            }
+        });
+    }
+
+    //给加号添加事件
+    function addEvent(ele) {
+        var id_num = $(ele).parent().parent().attr("id");
+        var buy_num = parseInt($(ele).prev().val()) + 1;
+        // console.log(typeof($(".add").prev().attr("value")));
+        console.log(id_num, buy_num);
+        $.ajax({
+            type: "get",
+            url: "../php/update_gcar.php",
+            data: {
+                id: id_num,
+                buy_num: buy_num
+            },
+            dataType: "json",
+            success: function(res) {
+                console.log(res);
+                var status = res.status;
+                console.log(status);
+                if (status) {
+                    console.log("更新成功！");
+                    addhtml();
+                    // location.href = "goods_car.html";
+                } else {
+                    console.log("更新失败！");
+                }
+            }
+        });
+    }
+
+    //给减号添加事件
+    function subEvent(ele) {
+        var id_num = $(ele).parent().parent().attr("id");
+        var buy_num = parseInt($(ele).next().val());
+        buy_num = buy_num - 1;
+        buy_num = buy_num > 1 ? buy_num : 1;
+        console.log(buy_num);
+        $.ajax({
+            type: "get",
+            url: "../php/update_gcar.php",
+            data: {
+                id: id_num,
+                buy_num: buy_num
+            },
+            dataType: "json",
+            success: function(res) {
+                console.log(res);
+                var status = res.status;
+                console.log(status);
+                if (status) {
+                    console.log("更新成功！");
+                    addhtml();
+                    // location.href = "goods_car.html";
+                } else {
+                    console.log("更新失败！");
+                }
+            }
+        });
+    }
+
+
+    //清空购物车
+    function deleteCarAll() {
+        $.ajax({
+            type: "get",
+            url: "../php/delete_gcarAll.php",
+            dataType: "json",
+            success: function(res) {
+                console.log(res);
+                var status = res.status;
+                if (status) {
+                    console.log("删除成功!");
+                    addhtml();
+                    // location.href = "goods_car.html";
+
+                } else {
+                    console.log("删除失败!");
+                    $(".Tcon").html("暂无数据");
+                }
+            }
+        });
+    }
+
+    //给提交订单添加事件
+    $(document).on("click", ".login_ok", function() {
+        $.getScript("../js/cookie.js", function() {
+            console.log("外部js引入完毕");
+            var userphone = getCookie("userphone");
+            if (userphone) {
+                alert("您已成功提交订单");
+            } else {
+                confirm("您还未登录，请问是否登录?");
+                location.href = "login.html";
+            }
+
+        });
+
+    });
+
+
+    //生成前端的商品html页面
+    function addhtml() {
+        $(".Tcon").html("");
+        $(".Tfooter").html("");
+        $.ajax({
+            type: "get",
+            url: "../php/searchCar.php",
+            dataType: "json",
+            success: function(res) {
+                if (res.length > 0) {
+                    var html = "";
+                    var htmlF = "";
+                    var subtotal = 0;
+                    res.forEach(item => {
+                        var {
+                            id,
+                            id_num,
+                            goods_name,
+                            goods_size,
+                            goods_price,
+                            goods_img,
+                            buy_num
+                        } = item;
+                        html += ` <tbody>
+                    <tr id="${id_num}">
+                        <th width="160"><img src="../images/gcar_no_03.jpg" alt=""  class="delete" onclick="del(this);"></th>
+                        <th width="310" height="145" class="goods_name">
+                            <img src="../images/${goods_img}" alt="">
+                            <a href="#"><span class="goods_name">${goods_name}</span></a>
+                        </th>
+                        <th width="240" class="goods_prop">${goods_size}</th>
+                        <th width="90" class="goods_count">
+                            <a href="javascript:void(0)" class="sub pointer" onclick="subEvent(this);">-</a>
+                            <input type="text" class="goods_num" value="${buy_num}">
+                            <a href="javascript:void(0)" class="add pointer" onclick="addEvent(this);">+</a>
+                        </th>
+                        <th width="180" class="goods_price">${goods_price}</th>
+                        <th class="allprice">${(goods_price*buy_num).toFixed(2)}</th>
+                    </tr>
+                </tbody>`;
+                        subtotal += parseInt((goods_price * buy_num));
+                        htmlF = `<tbody>
+                    <tr>
+                        <th width="120"><input type="button" class="clear_btn" value="清空购物车" onclick="deleteCarAll();"></th>
+                        <th class="price_th"><span>商品应付金额：</span><em>￥</em><em id="amount2">${subtotal.toFixed(2)}</em></th>
+                        <th width="180" class="sub_th">
+                            <a href="#" id="submit" class="login_ok" onclick="">提交订单</a>
+                        </th>
+                    </tr>
+                </tbody>`
+
+
+                        //<input type="text" class="goods_num" value="1">value=${buy_num}
+                        //<th class="allprice"></th>allprice=${goods_allprice}
+                    });
+                    // console.log(html);
+                    // console.log($(".Tcon"));
+                    $(".Tcon").append(html);
+                    $(".Tfooter").append(htmlF);
+
+                } else {
+                    $(".Tcon").html("暂无数据");
+                }
+            }
+        });
+
+    }
+</script>
+
+</html>

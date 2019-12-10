@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet " href="../font_footer2/iconfont.css ">
+    <link rel="stylesheet" href="../css/detail_index.css">
+</head>
+
+<body>
+    <!---------------- header ------------------>
+    <div class="wrap_header"></div>
+    <!---------------- content ------------------>
+    <div class="index">
+        当前位置:
+        <a href="index.html" target="_blank">首页</a> <code>&gt;</code> <a href="more.html">更多作品</a>
+        <code>&gt;</code> 银杏项链
+    </div>
+    <div class="content">
+        <!-- <div class="con_lf">
+            <img src="../images/det.png" class="goods_img" alt="">
+        </div>
+        <div class="con_rig">
+            <form action="" method="get">
+                <div class="goods_title">
+                    <h1>银杏项链 </h1>
+                    <p><span>型号：FCA001242</span><span>购买指数：23519</span></p>
+                </div>
+                <div class="goods_prop">
+                    材质：金（9K）
+                </div>
+                <div class="goods_select">
+                    尺寸：
+                    <select>
+                        <option label="均码">均码</option>
+                    </select>
+                </div>
+                <div class="goods_price">
+                    <h2>
+                        <span><em>￥</em><b id="goods_amount">1780</b></span>
+                    </h2>
+
+                    <a href="#" class="goods_car">加入购物车</a>
+                    <a href="#" class="goods_buy">立即购买</a>
+                    <ul class="online">
+                        <li><a href="#" target="_blank">支持货到付款</a></li>
+                        <li><a href="#" target="_blank">顺丰空运配送</a></li>
+                        <li><a href="#" target="_blank">7天无理由退换</a></li>
+                    </ul>
+                    <p>
+                        如需加急快递及预约定时递送服务请与在线客服联系。
+                    </p>
+                </div>
+            </form>
+        </div> -->
+    </div>
+    <!---------------- footer ------------------>
+    <div class="wrap_footer"></div>
+</body>
+<script>
+    var search = location.search;
+    // console.log(search);
+    if (search) {
+        var goodsId = search.split("=")[1];
+        //获取数据库的数据，动态生成页面
+        $.ajax({
+            type: "get",
+            url: "../php/searchById.php",
+            data: {
+                id: goodsId
+            },
+            dataType: "json",
+            success: function(res) {
+                // console.log(res);
+                addhtml(res);
+            }
+        })
+
+    }
+
+    // 放大镜原生代码
+    function fangdajing() {
+        var leftBox = document.querySelector(".con_lf");
+        var rightBox = document.querySelector(".big_box");
+        var shadow = document.querySelector(".shadow");
+
+        var smallImg = document.querySelector(".goods_img");
+        var bigImg = document.querySelector(".bigimg");
+
+        console.log(leftBox);
+
+        var leftBoxOffsetLeft = leftBox.offsetLeft;
+        var leftBoxOffsetTop = leftBox.offsetTop;
+
+
+        leftBox.onmousemove = function(e) {
+            var e = e || window.event;
+
+            shadow.style.display = "block";
+            rightBox.style.display = "block";
+
+            // 2. 显示的时候获取   
+            var shadowWidth = shadow.clientWidth;
+            var shadowHeight = shadow.clientHeight;
+
+            var maxWidth = leftBox.clientWidth - shadow.clientWidth;
+            var maxHeight = leftBox.clientHeight - shadow.clientHeight;
+
+            // console.log(e);
+
+            // shadow 的left  和  top
+            var x = e.clientX - leftBoxOffsetLeft - shadowWidth / 2;
+            var y = e.clientY - leftBoxOffsetTop - shadowHeight / 2;
+
+            if (x <= 0) {
+                x = 0;
+            }
+            if (y < 0) {
+                y = 0;
+            }
+            if (x >= maxWidth) {
+                x = maxWidth
+            }
+            if (y >= maxHeight) {
+                y = maxHeight;
+            }
+
+
+
+
+            shadow.style.left = x + "px";
+            shadow.style.top = y + "px";
+
+            // 放大镜确定的关系
+            // 1.  按照比例移动
+            // 2.  大图片的移动方向和shadow相反
+
+            var scale = bigImg.clientWidth / smallImg.clientWidth; //2
+            bigImg.style.left = -scale * x + "px";
+            bigImg.style.top = -scale * y + "px";
+
+        }
+        leftBox.onmouseout = function() {
+            shadow.style.display = "none";
+            rightBox.style.display = "none";
+        }
+
+        function getStyle(ele, attr) {
+            if (window.getComputedStyle) {
+                return window.getComputedStyle(ele)[attr];
+            } else {
+                return ele.currentStyle[attr];
+            }
+        }
+    }
+
+    //声明变量buy_num
+    var buy_num = 1;
+
+    function AddToCar() {
+        //第一步，判断数据库的购物车列表有没有此条数据
+        //如果有，则返回值buy_num加一，然后更新数据库的内容
+        //如果没有，直接新增
+        $.ajax({
+            type: "get",
+            url: "../php/judge_gcar.php",
+            data: {
+                id: goodsId
+            },
+            dataType: "json",
+            success: function(res) {
+                console.log(res);
+                if (res.length > 0) {
+                    buy_num = parseInt(res[0].buy_num) + 1;
+                    console.log(buy_num);
+                    updateCar(buy_num);
+                } else {
+                    $.ajax({
+                        type: "get",
+                        url: "../php/searchById.php",
+                        data: {
+                            id: goodsId
+                        },
+                        dataType: "json",
+                        success: function(res) {
+                            console.log(res);
+                            addCar(res);
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    //动态生成详情页的页面
+    function addhtml(result) {
+        $(".content").html("");
+        // console.log(result);
+        if (!Array.isArray(result)) {
+            var err = new Error("Pass in an array,please");
+            throw err;
+        }
+        if (result.length > 0) {
+            var html = "";
+            result.forEach(item => {
+                var {
+                    id,
+                    goods_num,
+                    goods_name,
+                    goods_sales,
+                    goods_prop,
+                    htun_size,
+                    goods_size,
+                    goods_price,
+                    goods_img
+                } = item;
+                html += `<div class="con_lf">
+            <img src="../images/${goods_img}" class="goods_img" alt="">
+            <div class="shadow"></div>
+        </div>
+        <div class="big_box">
+            <img src="../images/${goods_img}" class="bigimg" alt="">
+        </div>
+        <div class="con_rig">
+            <form action="" method="get">
+                <div class="goods_title">
+                    <h1>${goods_name}</h1>
+                    <p><span>型号：${goods_num}</span><span>购买指数：${goods_sales}</span></p>
+                </div>
+                <div class="goods_prop">
+                    ${goods_prop}
+                    </br>${htun_size}
+                </div>
+                <div class="goods_select">
+                    尺寸：
+                    <select>
+                        <option label="均码">${goods_size}</option>
+                    </select>
+                </div>
+                <div class="goods_price">
+                    <h2>
+                        <span><em>￥</em><b id="goods_amount">${goods_price}</b></span>
+                    </h2>
+
+                    <a href="#" class="goods_car" onclick="AddToCar();">加入购物车</a>
+                    <a href="#" class="goods_buy">立即购买</a>
+                    <ul class="online">
+                        <li><a href="#" target="_blank">支持货到付款</a></li>
+                        <li><a href="#" target="_blank">顺丰空运配送</a></li>
+                        <li><a href="#" target="_blank">7天无理由退换</a></li>
+                    </ul>
+                    <p>
+                        如需加急快递及预约定时递送服务请与在线客服联系。
+                    </p>
+                </div>
+            </form>
+        </div>`;
+            });
+            // console.log(html);
+            // console.log($(".content"));
+            $(".content").append(html);
+            fangdajing();
+        } else {
+            $(".content").append("<li><span>暂无数据</span></li>");
+        }
+
+    }
+
+
+    //向数据库的购物车表添加信息
+    function addCar(result) {
+        if (result.length > 0) {
+            result.forEach(item => {
+                var {
+                    id,
+                    goods_name,
+                    goods_size,
+                    goods_price,
+                    goods_img
+                } = item;
+                // console.log(id, goods_name, goods_size, goods_price, goods_img, buy_num, allprice);
+                $.ajax({
+                    type: "get",
+                    url: "../php/add_gcar.php",
+                    data: {
+                        id,
+                        goods_name,
+                        goods_size,
+                        goods_price,
+                        goods_img,
+                        buy_num
+                    },
+                    dataType: "json",
+                    success: function(res) {
+                        console.log(res);
+                        var status = res.status;
+                        console.log(status);
+                        if (status) {
+                            console.log("添加成功！");
+                            location.href = "goods_car.html";
+                        } else {
+                            console.log("添加失败！");
+                        }
+                    }
+                })
+            });
+
+        }
+    }
+
+    //更新数据库的购物车内容
+    function updateCar(buy_num) {
+        $.ajax({
+            type: "get",
+            url: "../php/update_gcar.php",
+            data: {
+                id: goodsId,
+                buy_num: buy_num
+            },
+            dataType: "json",
+            success: function(res) {
+                console.log(res);
+                var status = res.status;
+                console.log(status);
+                if (status) {
+                    console.log("添加成功！");
+                    location.href = "goods_car.html";
+                } else {
+                    console.log("添加失败！");
+                }
+            }
+        });
+    }
+</script>
+
+</html>

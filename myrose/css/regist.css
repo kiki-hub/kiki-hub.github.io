@@ -1,0 +1,158 @@
+/************************** content ****************************/
+
+.bg_content {
+    height: 788px;
+    background-color: #f8f8f8;
+}
+
+.bg_content .content {
+    width: 1198px;
+    height: 788px;
+    box-sizing: border-box;
+    /* height: 754px; */
+    /* background-color: pink; */
+    margin: 0 auto;
+    padding-top: 34px;
+}
+
+.bg_content .content>div {
+    float: left;
+}
+
+.bg_content .content .content_lef {
+    width: 722px;
+    height: 720px;
+    background-color: #ffffff;
+    overflow: hidden;
+    text-align: center;
+}
+
+.bg_content .content .content_lef>h3 {
+    font-size: 26px;
+    color: #020202;
+    margin-top: 80px;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+.bg_content .content .content_lef>h5 {
+    font-size: 10px;
+    color: #bec2c1;
+    margin-bottom: 50px;
+    font-weight: normal;
+}
+
+.bg_content .content .content_lef>p {
+    font-size: 12px;
+    color: #1e1d2b;
+    margin-bottom: 8px;
+}
+
+.bg_content .content .content_lef>img {
+    width: 524px;
+    height: 306px;
+    margin-top: 50px;
+}
+
+.bg_content .content .content_rig {
+    width: 438px;
+    height: 720px;
+    margin-left: 18px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding-left: 59px;
+    padding-right: 59px;
+    overflow: hidden;
+}
+
+.bg_content .content .content_rig .p1 {
+    margin-top: 40px;
+    border-bottom: 1px solid #c7c7c7;
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+}
+
+.bg_content .content .content_rig .p1 .alog {
+    font-size: 28px;
+    color: #010300;
+}
+
+.bg_content .content .content_rig .p1 .areg {
+    font-size: 12px;
+    color: #000400;
+}
+
+.bg_content .content .content_rig>div {
+    width: 318px;
+    height: 38px;
+    border: 1px solid #000000;
+    margin-top: 30px;
+    box-sizing: border-box;
+    padding-left: 12px;
+    overflow: hidden;
+}
+
+.bg_content .content .content_rig>div>img {
+    width: 20px;
+    height: 20px;
+    margin-top: 9px;
+    float: left;
+}
+
+.bg_content .content .content_rig>div>input {
+    outline: none;
+    border: 0;
+    height: 36px;
+    width: 280px;
+    text-indent: 14px;
+}
+
+
+/* .bg_content .content .content_rig .msg .msginp>img {
+    width: 20px;
+    height: 20px;
+    margin-top: 9px;
+    float: left;
+} */
+
+.bg_content .content .content_rig .msg {
+    width: 320px;
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.bg_content .content .content_rig .msg .msginp {
+    outline: none;
+    border: 1px solid #000000;
+    height: 38px;
+    width: 180px;
+    text-indent: 46px;
+}
+
+.bg_content .content .content_rig .msg .btninp {
+    border: 0;
+    width: 120px;
+    height: 40px;
+    background-color: #666666;
+    margin-left: 15px;
+}
+
+.bg_content .content .content_rig .p2 {
+    margin-top: 35px;
+    font-size: 14px;
+    color: #949a8c;
+    text-align: center;
+}
+
+.bg_content .content .content_rig>button {
+    width: 320px;
+    height: 38px;
+    background-color: #000000;
+    border: none;
+    font-size: 16px;
+    color: #efffee;
+    margin-top: 50px;
+}

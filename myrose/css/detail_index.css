@@ -1,0 +1,147 @@
+.index {
+    width: 1198px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.content {
+    width: 1198px;
+    /* height: 560px; */
+    height: 600px;
+    /* background: pink; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.content .con_lf {
+    width: 770px;
+    height: 560px;
+    /* background: yellow; */
+    text-align: center;
+    position: relative;
+}
+
+.content .con_lf .goods_img {
+    width: 560px;
+    height: 560px;
+}
+
+.content .con_lf .shadow {
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.content .big_box {
+    position: absolute;
+    left: 700px;
+    width: 560px;
+    height: 560px;
+    /* background: #fff; */
+    border: 1px solid #000;
+    overflow: hidden;
+    display: none;
+}
+
+.content .big_box>img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1120px;
+    height: 1120px;
+    background: #fff;
+    z-index: 1;
+}
+
+.content .con_rig>form {
+    width: 364px;
+    height: 560px;
+    /* background: rosybrown; */
+}
+
+.content .con_rig>form>form .goods_title {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content .con_rig>form .goods_title>h1 {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.content .con_rig>form .goods_title>p {
+    font-size: 12px;
+    color: #B8BABB;
+    line-height: 30px;
+}
+
+.content .con_rig>form .goods_prop {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.content .con_rig>form .goods_select {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+}
+
+.content .con_rig>form .goods_price>h2 {
+    font-size: 26px;
+    padding: 30px 0;
+    font-weight: 400;
+}
+
+.content .con_rig>form .goods_price .goods_car {
+    width: 362px;
+    height: 32px;
+    display: block;
+    border: 1px solid #000000;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.content .con_rig>form .goods_price .goods_buy {
+    width: 364px;
+    height: 34px;
+    display: block;
+    background: #000000;
+    color: #fff;
+    line-height: 34px;
+    text-align: center;
+}
+
+.content .con_rig>form .goods_price .online {
+    width: 100%;
+    height: 65px;
+    padding-top: 30px;
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-between;
+}
+
+.content .con_rig>form .goods_price .online>li {
+    line-height: 65px;
+    font-size: 14px;
+}
+
+.content .con_rig>form .goods_price>p {
+    text-align: left;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+    font-size: 14px;
+}

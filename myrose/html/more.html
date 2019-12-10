@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- <script src="../js/cookie.js"></script> -->
+    <script src="../js/fenye.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet " href="../font_footer2/iconfont.css ">
+    <link rel="stylesheet" href="../css/more.css">
+    <link rel="stylesheet" href="../css/fenye.css">
+
+
+</head>
+<!---------------- header ------------------>
+<div class="wrap_header"></div>
+<!---------------- content ------------------>
+<div class="bg_content">
+    <div class="content">
+        <div class="index">
+            当前位置: <a href=".">首页</a> <code>&gt;</code> <a href="#">探索更多</a> <code>&gt;</code> <a href="#">海豚系列</a>
+        </div>
+        <ul class="ringList">
+            <!-- <li>
+                <a href="#" target="_blank">
+                    <img src="../images/gc1.png" alt="真爱礼物-挚爱 30分/G色">
+                    <div class="price">
+                        <h3>海豚项链<span>￥1780</span></h3>
+                    </div>
+                </a>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li> -->
+        </ul>
+        <!-- 分页 -->
+        <div class="box">
+
+        </div>
+    </div>
+</div>
+
+<!---------------- footer ------------------>
+<div class="wrap_footer"></div>
+
+
+<body>
+
+</body>
+
+<script>
+    // $.ajax({
+    //     type: "GET",
+    //     url: "../php/all.php",
+    //     dataType: "json",
+    //     success: function(res) {
+    //         console.log(res);
+    //     }
+    // });
+
+    var showNum = 12;
+    var pageIndex = 0;
+    showPage(pageIndex, showNum);
+
+    function showPage(pageIndex, showNum) {
+        $.ajax({
+            type: "GET",
+            url: "../php/all.php",
+            dataType: "json",
+            success: function(res) {
+                console.log(res);
+                new Page(".box", {
+                    count: res.length,
+                    showpage: 5,
+                    shownum: showNum,
+                    callback(pageIndex) {
+                        pageIndex = pageIndex - 1;
+                        console.log("要开始分页啦", pageIndex);
+                        var start = pageIndex * showNum;
+                        var end = (pageIndex + 1) * showNum;
+                        dataL = res.slice(start, end);
+                        addhtml(dataL);
+                    }
+                })
+            }
+        });
+
+    }
+
+    function addhtml(result) {
+        $(".ringList").html("");
+        console.log(result);
+        if (!Array.isArray(result)) {
+            var err = new Error("Pass in an array,please");
+            throw err;
+        }
+        if (result.length > 0) {
+            var html = "";
+            result.forEach(item => {
+                var {
+                    id,
+                    goods_name,
+                    goods_prop,
+                    goods_price,
+                    goods_img
+                } = item;
+                html += `<li>
+                <a href="detail_index.html?id=${id}" target="_blank">
+                    <img src="../images/${goods_img}" alt="">
+                    <div class="price">
+                        <h3>${goods_name}<span>￥${goods_price}</span></h3>
+                    </div>
+                </a>
+            </li>`;
+            });
+            console.log(html);
+            console.log($(".ringList"));
+            $(".ringList").append(html);
+
+        } else {
+            $(".ringList").append("<li><span>暂无数据</span></li>");
+        }
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,982 @@
+/************ banner *************/
+
+.bg_banner {
+    margin: 0 auto;
+    max-width: 1920px;
+    height: 550px;
+    overflow: hidden;
+    background: url(../images/gift_banner.jpg) no-repeat;
+    background-position: 50% 50%;
+}
+
+
+/************ content1 *************/
+
+.content1 {
+    height: 1528px;
+    /* background: pink; */
+}
+
+.content1 .box {
+    box-sizing: border-box;
+    width: 1198px;
+    height: 130px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.content1 .box>h3 {
+    font-size: 22px;
+    color: #0a0009;
+    text-align: center;
+}
+
+.content1 .box>span {
+    font-size: 12px;
+    color: #999;
+    border-bottom: 1px solid #999;
+}
+
+.content1 .msg {
+    width: 1198px;
+    height: 450px;
+    /* background: yellowgreen; */
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.content1 .msg .msg_lf {
+    width: 800px;
+    height: 450px;
+}
+
+.content1 .msg .msg_lf>a>img {
+    width: 800px;
+    height: 450px;
+}
+
+.content1 .msg .msg_rig {
+    width: 398px;
+    height: 450px;
+    background: #f6f7f9;
+    text-align: center;
+    overflow: hidden;
+}
+
+.content1 .msg .msg_rig .line {
+    width: 210px;
+    border: 1px solid #000;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 108px;
+    margin-bottom: 50px;
+}
+
+.content1 .msg .msg_rig .font {
+    font-size: 22px;
+    background: #f5f7f8;
+    display: inline-block;
+    padding: 0 10px;
+    position: absolute;
+    top: -15px;
+    left: 50px;
+}
+
+.content1 .msg .msg_rig .text {
+    font-size: 16px;
+    color: #666;
+    line-height: 30px;
+}
+
+.content1 .gift_msg {
+    width: 1198px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content1 .gift_msg>ul {
+    width: 100%;
+}
+
+.content1 .gift_msg>ul>li {
+    float: left;
+    margin-right: 26px;
+    margin-bottom: 24px;
+    width: 280px;
+    height: 375px;
+    overflow: hidden;
+    background: #f5f7f8;
+    text-align: center;
+    position: relative;
+}
+
+.content1 .gift_msg>ul>li:nth-child(4n) {
+    margin-right: 0px;
+}
+
+.content1 .gift_msg>ul>li>a>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top .2s ease-in-out;
+    width: 282px;
+    height: 282px;
+}
+
+.content1 .gift_msg>ul>li>a:hover>img {
+    top: -4px;
+}
+
+.content1 .gift_msg>ul>li>a>h4 {
+    position: absolute;
+    top: 310px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.content1 .gift_msg>ul>li>a>span {
+    position: absolute;
+    top: 330px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content1 .gift_msg>ul>li>a>span>em {
+    font-size: 14px;
+    font-style: normal;
+}
+
+.content1 .gift_msg>ul>li>a:hover {
+    color: rgba(0, 0, 0, 0.4)
+}
+
+.content1 .gift_more {
+    width: 1198px;
+    height: 32px;
+    text-align: center;
+    margin-top: 50px;
+    margin: 0 auto;
+}
+
+.content1 .gift_more>a {
+    padding: 8px 50px;
+    background: #000;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+
+/************ content2 *************/
+
+.content2 {
+    height: 1397px;
+    /* background: yellowgreen; */
+}
+
+.content2 .box {
+    box-sizing: border-box;
+    width: 1198px;
+    height: 130px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.content2 .box>h3 {
+    font-size: 22px;
+    color: #0a0009;
+    text-align: center;
+}
+
+.content2 .box>span {
+    font-size: 12px;
+    color: #999;
+    border-bottom: 1px solid #999;
+}
+
+.content2 .msg {
+    width: 1198px;
+    height: 450px;
+    /* background: yellowgreen; */
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.content2 .msg .msg_lf {
+    width: 800px;
+    height: 450px;
+}
+
+.content2 .msg .msg_lf>a>img {
+    width: 800px;
+    height: 450px;
+}
+
+.content2 .msg .msg_rig {
+    width: 398px;
+    height: 450px;
+    background: #f6f7f9;
+    text-align: center;
+    overflow: hidden;
+}
+
+.content2 .msg .msg_rig .line {
+    width: 210px;
+    border: 1px solid #000;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 108px;
+    margin-bottom: 50px;
+}
+
+.content2 .msg .msg_rig .font {
+    font-size: 22px;
+    background: #f5f7f8;
+    display: inline-block;
+    padding: 0 10px;
+    position: absolute;
+    top: -15px;
+    left: 50px;
+}
+
+.content2 .msg .msg_rig .text {
+    font-size: 16px;
+    color: #666;
+    line-height: 30px;
+}
+
+.content2 .gift_msg {
+    width: 1198px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content2 .gift_msg>ul {
+    width: 100%;
+}
+
+.content2 .gift_msg>ul>li {
+    float: left;
+    margin-right: 26px;
+    margin-bottom: 24px;
+    width: 280px;
+    height: 375px;
+    overflow: hidden;
+    background: #f5f7f8;
+    text-align: center;
+    position: relative;
+}
+
+.content2 .gift_msg>ul>li:nth-child(4n) {
+    margin-right: 0px;
+}
+
+.content2 .gift_msg>ul>li>a>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top .2s ease-in-out;
+    width: 282px;
+    height: 282px;
+}
+
+.content2 .gift_msg>ul>li>a:hover>img {
+    top: -4px;
+}
+
+.content2 .gift_msg>ul>li>a>h4 {
+    position: absolute;
+    top: 310px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.content2 .gift_msg>ul>li>a>span {
+    position: absolute;
+    top: 330px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content2 .gift_msg>ul>li>a>span>em {
+    font-size: 14px;
+    font-style: normal;
+}
+
+.content2 .gift_msg>ul>li>a:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.content2 .gift_more {
+    width: 1198px;
+    height: 32px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.content2 .gift_more>a {
+    padding: 8px 50px;
+    background: #000;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+
+/************ content3 *************/
+
+.content3 {
+    height: 1347px;
+    /* background: pink; */
+}
+
+.content3 .msg {
+    width: 1198px;
+    height: 450px;
+    /* background: yellowgreen; */
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.content3 .msg .msg_lf {
+    width: 800px;
+    height: 450px;
+}
+
+.content3 .msg .msg_lf>a>img {
+    width: 800px;
+    height: 450px;
+}
+
+.content3 .msg .msg_rig {
+    width: 398px;
+    height: 450px;
+    background: #f6f7f9;
+    text-align: center;
+    overflow: hidden;
+}
+
+.content3 .msg .msg_rig .line {
+    width: 210px;
+    border: 1px solid #000;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 108px;
+    margin-bottom: 50px;
+}
+
+.content3 .msg .msg_rig .font {
+    font-size: 22px;
+    background: #f5f7f8;
+    display: inline-block;
+    padding: 0 10px;
+    position: absolute;
+    top: -15px;
+    left: 50px;
+}
+
+.content3 .msg .msg_rig .text {
+    font-size: 16px;
+    color: #666;
+    line-height: 30px;
+}
+
+.content3 .gift_msg {
+    width: 1198px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content3 .gift_msg>ul {
+    width: 100%;
+}
+
+.content3 .gift_msg>ul>li {
+    float: left;
+    margin-right: 26px;
+    margin-bottom: 24px;
+    width: 280px;
+    height: 375px;
+    overflow: hidden;
+    background: #f5f7f8;
+    text-align: center;
+    position: relative;
+}
+
+.content3 .gift_msg>ul>li:nth-child(4n) {
+    margin-right: 0px;
+}
+
+.content3 .gift_msg>ul>li>a>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top .2s ease-in-out;
+    width: 282px;
+    height: 282px;
+}
+
+.content3 .gift_msg>ul>li>a:hover>img {
+    top: -4px;
+}
+
+.content3 .gift_msg>ul>li>a>h4 {
+    position: absolute;
+    top: 310px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.content3 .gift_msg>ul>li>a>span {
+    position: absolute;
+    top: 330px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content3 .gift_msg>ul>li>a>span>em {
+    font-size: 14px;
+    font-style: normal;
+}
+
+.content3 .gift_msg>ul>li>a:hover {
+    color: rgba(0, 0, 0, 0.4)
+}
+
+.content3 .gift_more {
+    width: 1198px;
+    height: 32px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.content3 .gift_more>a {
+    padding: 8px 50px;
+    background: #000;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+
+/************ content4 *************/
+
+.content4 {
+    height: 1397px;
+    /* background: yellowgreen; */
+}
+
+.content4 .box {
+    box-sizing: border-box;
+    width: 1198px;
+    height: 130px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.content4 .box>h3 {
+    font-size: 22px;
+    color: #0a0009;
+    text-align: center;
+}
+
+.content4 .box>span {
+    font-size: 12px;
+    color: #999;
+    border-bottom: 1px solid #999;
+}
+
+.content4 .msg {
+    width: 1198px;
+    height: 450px;
+    /* background: yellowgreen; */
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.content4 .msg .msg_lf {
+    width: 800px;
+    height: 450px;
+}
+
+.content4 .msg .msg_lf>a>img {
+    width: 800px;
+    height: 450px;
+}
+
+.content4 .msg .msg_rig {
+    width: 398px;
+    height: 450px;
+    background: #f6f7f9;
+    text-align: center;
+    overflow: hidden;
+}
+
+.content4 .msg .msg_rig .line {
+    width: 210px;
+    border: 1px solid #000;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 108px;
+    margin-bottom: 50px;
+}
+
+.content4 .msg .msg_rig .font {
+    font-size: 22px;
+    background: #f5f7f8;
+    display: inline-block;
+    padding: 0 10px;
+    position: absolute;
+    top: -15px;
+    left: 50px;
+}
+
+.content4 .msg .msg_rig .text {
+    font-size: 16px;
+    color: #666;
+    line-height: 30px;
+}
+
+.content4 .gift_msg {
+    width: 1198px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content4 .gift_msg>ul {
+    width: 100%;
+}
+
+.content4 .gift_msg>ul>li {
+    float: left;
+    margin-right: 26px;
+    margin-bottom: 24px;
+    width: 280px;
+    height: 375px;
+    overflow: hidden;
+    background: #f5f7f8;
+    text-align: center;
+    position: relative;
+}
+
+.content4 .gift_msg>ul>li:nth-child(4n) {
+    margin-right: 0px;
+}
+
+.content4 .gift_msg>ul>li>a>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top .2s ease-in-out;
+    width: 282px;
+    height: 282px;
+}
+
+.content4 .gift_msg>ul>li>a:hover>img {
+    top: -4px;
+}
+
+.content4 .gift_msg>ul>li>a>h4 {
+    position: absolute;
+    top: 310px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.content4 .gift_msg>ul>li>a>span {
+    position: absolute;
+    top: 330px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content4 .gift_msg>ul>li>a>span>em {
+    font-size: 14px;
+    font-style: normal;
+}
+
+.content4 .gift_msg>ul>li>a:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.content4 .gift_more {
+    width: 1198px;
+    height: 32px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.content4 .gift_more>a {
+    padding: 8px 50px;
+    background: #000;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+
+/************ content5 *************/
+
+.content5 {
+    height: 1347px;
+    /* background: pink; */
+}
+
+.content5 .msg {
+    width: 1198px;
+    height: 450px;
+    /* background: yellowgreen; */
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.content5 .msg .msg_lf {
+    width: 800px;
+    height: 450px;
+}
+
+.content5 .msg .msg_lf>a>img {
+    width: 800px;
+    height: 450px;
+}
+
+.content5 .msg .msg_rig {
+    width: 398px;
+    height: 450px;
+    background: #f6f7f9;
+    text-align: center;
+    overflow: hidden;
+}
+
+.content5 .msg .msg_rig .line {
+    width: 210px;
+    border: 1px solid #000;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 108px;
+    margin-bottom: 50px;
+}
+
+.content5 .msg .msg_rig .font {
+    font-size: 22px;
+    background: #f5f7f8;
+    display: inline-block;
+    padding: 0 10px;
+    position: absolute;
+    top: -15px;
+    left: 50px;
+}
+
+.content5 .msg .msg_rig .text {
+    font-size: 16px;
+    color: #666;
+    line-height: 30px;
+}
+
+.content5 .gift_msg {
+    width: 1198px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content5 .gift_msg>ul {
+    width: 100%;
+}
+
+.content5 .gift_msg>ul>li {
+    float: left;
+    margin-right: 26px;
+    margin-bottom: 24px;
+    width: 280px;
+    height: 375px;
+    overflow: hidden;
+    background: #f5f7f8;
+    text-align: center;
+    position: relative;
+}
+
+.content5 .gift_msg>ul>li:nth-child(4n) {
+    margin-right: 0px;
+}
+
+.content5 .gift_msg>ul>li>a>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top .2s ease-in-out;
+    width: 282px;
+    height: 282px;
+}
+
+.content5 .gift_msg>ul>li>a:hover>img {
+    top: -4px;
+}
+
+.content5 .gift_msg>ul>li>a>h4 {
+    position: absolute;
+    top: 310px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.content5 .gift_msg>ul>li>a>span {
+    position: absolute;
+    top: 330px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content5 .gift_msg>ul>li>a>span>em {
+    font-size: 14px;
+    font-style: normal;
+}
+
+.content5 .gift_msg>ul>li>a:hover {
+    color: rgba(0, 0, 0, 0.4)
+}
+
+.content5 .gift_more {
+    width: 1198px;
+    height: 32px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.content5 .gift_more>a {
+    padding: 8px 50px;
+    background: #000;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+
+/************ content6 *************/
+
+.content6 {
+    height: 870px;
+    background: pink;
+}
+
+.content6 .st_box {
+    width: 1198px;
+    height: 872px;
+    margin: 0 auto;
+    background: yellow;
+    position: relative;
+}
+
+.content6 .st_box .box {
+    box-sizing: border-box;
+    width: 1198px;
+    height: 205px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.content6 .st_box .box>h3 {
+    font-size: 22px;
+    color: #0a0009;
+    text-align: center;
+}
+
+.content6 .st_box .box>span {
+    font-size: 12px;
+    color: #999;
+    border-bottom: 1px solid #999;
+}
+
+.content6 .st_box .box>p {
+    font-size: 15px;
+    color: #999;
+    padding-top: 25px;
+    line-height: 25px;
+}
+
+.content6 .st_box .wrap_st {
+    width: 1039px;
+    height: 555px;
+    padding: 36px 31px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: plum;
+    margin-bottom: 25px;
+}
+
+.content6 .st_box .wrap_st .st {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content6 .st_box .wrap_st .st .st_lf {
+    width: 623px;
+    height: 482px;
+}
+
+.content6 .st_box .wrap_st .st .st_lf>img {
+    width: 623px;
+    height: 482px;
+}
+
+.content6 .st_box .wrap_st .st .st_rig {
+    width: 385px;
+    height: 482px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #f1f1f1;
+}
+
+.content6 .st_box .wrap_st .st .st_rig>h3 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+.content6 .st_box .wrap_st .st .st_rig>p {
+    font-size: 14px;
+    line-height: 23px;
+    color: #616161;
+}
+
+.content6 .st_box .st_index {
+    width: 100%;
+    /* line-height: 0!important; */
+    text-align: center;
+    /* font-size: 0; */
+}
+
+.content6 .st_box .st_index>ul>li {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: inline-block;
+    background-color: #e2e2e2;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    /* -webkit-transition-duration: .3s;
+    transition-duration: .3s; */
+}
+
+.content6 .st_box .st_index>ul .active {
+    background: #000;
+}
+
+.content6 .st_box>button {
+    width: 26px;
+    height: 46px;
+    background: #000;
+    /* text-align: center; */
+    /* line-height: 36px; */
+    position: absolute;
+    border: 0;
+    cursor: pointer;
+}
+
+.content6 .st_box>button>img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 3px;
+    width: 13px;
+    height: 17px;
+}
+
+.content6 .st_box>.btn_lf {
+    left: 0px;
+    top: 465px;
+}
+
+.content6 .st_box>.btn_rig {
+    right: 0px;
+    top: 465px;
+}
+
+
+/************ content7 *************/
+
+.content7 {
+    height: 550px;
+    background: #f3ece4;
+}
+
+.content7 .box {
+    box-sizing: border-box;
+    width: 1198px;
+    height: 130px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.content7 .box>h3 {
+    font-size: 22px;
+    color: #0a0009;
+    text-align: center;
+}
+
+.content7 .box>span {
+    font-size: 12px;
+    color: #999;
+    border-bottom: 1px solid #999;
+}
+
+.content7 ul {
+    width: 1198px;
+    height: 334px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content7 ul>li {
+    width: 380px;
+    height: 334px;
+    background: #fff;
+}
+
+.content7 ul>li>img {
+    width: 380px;
+    height: 231px;
+}
+
+.content7 ul>li>p {
+    font-size: 16px;
+    text-align: center;
+    padding-top: 20px;
+}

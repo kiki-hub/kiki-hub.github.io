@@ -1,0 +1,61 @@
+.bg_content {
+  background: #f0f0f0;
+}
+.bg_content .content {
+  width: 1198px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+.bg_content .content .index {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+}
+.bg_content .content .ringList {
+  width: 1198px;
+  overflow: hidden;
+}
+.bg_content .content .ringList li {
+  float: left;
+  width: 292px;
+  height: 370px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  position: relative;
+}
+.bg_content .content .ringList li a:hover img {
+  top: -2px;
+}
+.bg_content .content .ringList li a:hover h3 {
+  color: #333333;
+}
+.bg_content .content .ringList li img {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 292px;
+  height: 292px;
+  transition: top .2s ease-in-out;
+}
+.bg_content .content .ringList li .price {
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+}
+.bg_content .content .ringList li .price h3 {
+  width: 292px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 400;
+}
+.bg_content .content .ringList li:nth-child(4n) {
+  margin-right: 0px;
+}
+.bg_content .content .box {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=more.css.map */

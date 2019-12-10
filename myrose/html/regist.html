@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/regist.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../font_footer2/iconfont.css">
+    <link rel="stylesheet " href="../font_footer2/iconfont.css ">
+</head>
+
+<body>
+    <!-------------- header------------------->
+    <div class="wrap_header"></div>
+
+    <!-------------- content ------------------->
+    <div class="bg_content">
+        <div class="content">
+            <div class="content_lef">
+                <h3>真爱承诺证书</h3>
+                <h5>LOVE CUSTOM</h5>
+                <p>FORMYROSE（弗蒂斯），秉承：一生只为一人定制的创始理念。</p>
+                <p>阁下购买时需填写真爱承诺证书，爱人姓名填写后将存入FORMYROSE真爱档案并锁定，</p>
+                <p>一生不得更改。</p>
+                <img src="../images/login_c1.jpg" alt="">
+            </div>
+            <div class="content_rig">
+                <p class="p1">
+                    <a href="#" class="alog">注册</a>
+                    <a href="login.html" class="areg">返回登录</a>
+                </p>
+                <div class="phone">
+                    <img src="../images/log_03.jpg" alt="">
+                    <input type="text" class="phonenum" placeholder="请输入您的手机号码">
+                </div>
+                <p class="msg">
+                    <input type="text" class="msginp" placeholder="请获取短信验证码">
+                    <input type="submit" class="btninp" value="获取验证码">
+                </p>
+
+                <div class="psd">
+                    <img src="../images/log_06.jpg" alt="">
+                    <input type="password" class="psd1" placeholder="请输入您的密码">
+                </div>
+                <div class="psd">
+                    <img src="../images/log_06.jpg" alt="">
+                    <input type="password" class="psd2" placeholder="再次输入您的登录密码">
+                </div>
+                <p class="p2">
+                    <input type="checkbox" checked>
+                    <span>已阅读，同意《FORMYROSE用户协议》</span>
+                </p>
+                <button class="regbtn">提交注册</button>
+            </div>
+        </div>
+    </div>
+
+    <!-------------- footer------------------->
+    <div class="wrap_footer"></div>
+
+
+</body>
+<script>
+    var regbtn = document.querySelector(".regbtn");
+    var phoneInp = document.querySelector(".phonenum");
+    var psd1Inp = document.querySelector(".psd1");
+    var psd2Inp = document.querySelector(".psd2");
+    // console.log(regbtn, phoneInp, psd1Inp, psd2Inp);
+
+
+
+
+
+    //点击注册按钮
+    regbtn.onclick = function() {
+        console.log("被点击了");
+        var userphone = phoneInp.value;
+        var password = psd1Inp.value;
+        var psdcheck = psd2Inp.value;
+        // console.log(userphone, password, psdcheck);
+        // 判断用户号码输入是否正确
+        phoneInp.flag = false;
+        psd1Inp.flag = false;
+        psd2Inp.flag = false;
+
+        if (phone()) {
+            if (psd1()) {
+                psd2();
+            }
+        }
+
+        if (phoneInp.flag && psd1Inp.flag && psd2Inp.flag) {
+            $.ajax({
+                type: "POST",
+                url: "../php/regist.php",
+                data: {
+                    userphone,
+                    password
+                },
+                dataType: "json",
+                success: function(res) {
+                    console.log(res);
+                    var status = res.status;
+                    console.log(status);
+                    if (status) {
+                        alert("注册成功");
+                        location.href = "login.html";
+                    }
+                }
+
+            });
+        }
+    };
+
+
+    function phone() {
+        var userphone = phoneInp.value;
+        var reg = /^1\d{10}$/;
+        if (userphone) {
+            if (reg.test(userphone)) {
+                return phoneInp.flag = true;
+            } else {
+                alert("请输入正确的手机号码");
+            }
+        } else {
+            alert("号码不能为空");
+        }
+    }
+
+    function psd1() {
+        var password = psd1Inp.value;
+        var reg = /^[a-zA-Z_$][\w$]{5,19}$/;
+        if (password) {
+            if (reg.test(password)) {
+                return psd1Inp.flag = true;
+            } else {
+                alert("密码格式6-20位,由字母、数字、下划线组成,不能以数字开头,请输入正确的密码");
+            }
+        } else {
+            alert("密码输入不能为空");
+        }
+    }
+
+
+    function psd2() {
+        var password = psd1Inp.value;
+        var psdcheck = psd2Inp.value;
+        if (password && psdcheck) {
+            if (password == psdcheck) {
+                return psd2Inp.flag = true;
+            } else {
+                alert("密码输入不一致");
+            }
+        } else {
+            alert("请输入确认密码,判断是否一致")
+        }
+    }
+</script>
+
+
+</html>
